@@ -1,7 +1,6 @@
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.fest.assertions.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -9,7 +8,7 @@ import static org.mockito.Mockito.when;
 public class HelloWorldTest {
     @Test
     public void hello_world_test(){
-        assertThat("Hello World", is("Hello World"));
+        assertThat("Hello World").isEqualTo("Hello World");
     }
 
     @Test
@@ -17,6 +16,6 @@ public class HelloWorldTest {
         HelloWorld helloWorld = mock(HelloWorld.class);
         when(helloWorld.beenCalled()).thenReturn("Hello World");
 
-        assertThat(helloWorld.beenCalled(), is("Hello World"));
+        assertThat(helloWorld.beenCalled()).isEqualTo("Hello World");
     }
 }
